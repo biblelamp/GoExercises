@@ -10,6 +10,12 @@ https://stackoverflow.com/questions/27747457/golang-plugin-on-notepad
 ## Go Tour (5 parts)
 https://go-tour-ru-ru.appspot.com/list
 
+## Little Go book (RU)
+https://sefus.ru/little-go-book/
+
+## Go by examples (RU)
+https://gobyexample.ru/
+
 ## Why should you learn Go (RU)?
 https://habr.com/ru/post/326798/
 
