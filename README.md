@@ -16,6 +16,9 @@ https://sefus.ru/little-go-book/
 ## Go by examples (RU)
 https://gobyexample.ru/
 
+## The Go Playground
+https://play.golang.org
+
 ## Why should you learn Go (RU)?
 https://habr.com/ru/post/326798/
 
