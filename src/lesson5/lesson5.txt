@@ -1,0 +1,23 @@
+Урок 5. Стандартная библиотека
+
+Раздел урока № 1. flags, log
+https://golang.org/pkg/flag/
+https://golang.org/pkg/log/
+
+    https://gobyexample.ru/command-line-flags.html
+    https://stackoverrun.com/ru/q/11136441
+
+Раздел урока № 2. strings
+https://golang.org/pkg/strings/
+
+    https://gobyexample.ru/string-functions.html
+    https://gobyexample.ru/string-formatting.html
+
+Раздел урока № 3. time
+https://golang.org/pkg/time/
+
+Раздел урока № 4. Файлы?
+https://golang.org/pkg/io/
+
+Раздел урока № 5. encoding
+https://golang.org/pkg/encoding/
