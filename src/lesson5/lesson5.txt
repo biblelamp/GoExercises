@@ -4,7 +4,7 @@
 https://golang.org/pkg/flag/
 https://golang.org/pkg/log/
 
-Пакет flag реализует работу с флагами командной строки.
+    Пакет flag реализует работу с флагами командной строки.
 
     https://gobyexample.ru/command-line-flags.html
     https://stackoverrun.com/ru/q/11136441
@@ -23,11 +23,15 @@ https://golang.org/pkg/strings/
 Раздел урока № 3. time
 https://golang.org/pkg/time/
 
-Раздел урока № 4. файлы
+    timer.go
+
+Раздел урока № 4. files
 https://golang.org/pkg/io/
 
     fileread.go
     filereadshort.go
+    filecreate.go
+    dirread.go
 
 Раздел урока № 5. encoding
 https://golang.org/pkg/encoding/
