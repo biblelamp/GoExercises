@@ -23,6 +23,7 @@ https://golang.org/pkg/strings/
 Раздел урока № 3. time
 https://golang.org/pkg/time/
 
+    https://machiel.me/post/time-in-go-a-primer/
     timer.go
 
 Раздел урока № 4. files
