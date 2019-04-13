@@ -1,24 +1,23 @@
 package main
 
 import (
+    "fmt"
     "flag"
-    "fmt")
+)
 
 func main() {
-
-    wordPtr := flag.String("word", "foo", "a string")
-    numbPtr := flag.Int("numb", 42, "an int")
+    strPtr := flag.String("str", "foo", "a string")
+    numPtr := flag.Int("num", 42, "an int")
     boolPtr := flag.Bool("fork", false, "a bool")
 
-    var svar string
-    flag.StringVar(&svar, "svar", "bar", "a string var")
+    var strVar string
+    flag.StringVar(&strVar, "strVar", "bar", "a string var")
 
     flag.Parse()
 
-    fmt.Println("word:", *wordPtr)
-    fmt.Println("numb:", *numbPtr)
+    fmt.Println("str:", *strPtr)
+    fmt.Println("num:", *numPtr)
     fmt.Println("fork:", *boolPtr)
-    fmt.Println("svar:", svar)
+    fmt.Println("strVar:", strVar)
     fmt.Println("tail:", flag.Args())
-
 }
