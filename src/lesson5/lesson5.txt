@@ -7,7 +7,7 @@ https://golang.org/pkg/log/
     Пакет flag реализует работу с флагами командной строки.
 
     https://gobyexample.ru/command-line-flags.html
-    https://stackoverrun.com/ru/q/11136441
+    log: https://stackoverrun.com/ru/q/11136441
 
     flags.go
     args.go
@@ -24,7 +24,7 @@ https://golang.org/pkg/strings/
 https://golang.org/pkg/time/
 
     https://machiel.me/post/time-in-go-a-primer/
-    timer.go
+    time.go
 
 Раздел урока № 4. files
 https://golang.org/pkg/io/
@@ -38,3 +38,6 @@ https://golang.org/pkg/io/
 https://golang.org/pkg/encoding/
 
     https://habr.com/ru/post/309834/
+    XML
+    http://www.golangprograms.com/golang-program-to-read-xml-file-into-struct.html
+    http://www.golangprograms.com/golang-write-struct-to-xml-file.html
