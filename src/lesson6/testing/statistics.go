@@ -1,4 +1,4 @@
-package statistics
+package testing
 
 // save to %GOPATH%/src/statistics
 // move to this folder and make:
