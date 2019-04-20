@@ -1,12 +1,15 @@
 Урок 6. Стандартная библиотека, продолжение
 
-Раздел урока № 1. Testing
+Раздел урока № 1. testing
+https://golang.org/pkg/testing/
 
 
-Раздел урока № 2. HTTP
+Раздел урока № 2. net/http
+https://golang.org/pkg/net/http/
 
 
-Раздел урока № 3. HTML
+Раздел урока № 3. html
+https://golang.org/pkg/html/
 
 
 Раздел урока № 4. Image
