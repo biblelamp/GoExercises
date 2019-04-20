@@ -24,6 +24,7 @@ https://golang.org/pkg/strings/
 https://golang.org/pkg/time/
 
     https://machiel.me/post/time-in-go-a-primer/
+    http://demin.ws/blog/russian/2012/04/27/date-and-time-formatting-in-go/
     time.go
 
 Раздел урока № 4. files
