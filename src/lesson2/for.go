@@ -13,7 +13,7 @@ func main() {
         fmt.Print(i, " ")
     }
     fmt.Println()
-    str := "Test String"
+    str := "Тест String"
     for i, ch := range str {
         fmt.Println("Code", ch, "of char in string No", i)
     }
