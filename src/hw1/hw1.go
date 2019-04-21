@@ -16,16 +16,25 @@ func main() {
 	var amountRub, legOne, legTwo, amount, percent float64
 
 	fmt.Println("1. Currency conversion. Enter the amount in rubles:")
-	fmt.Scanln(&amountRub)
+	_, err := fmt.Scanln(&amountRub)
+	if err != nil {
+		return
+	}
 	fmt.Printf("%.2f RUB = %.2f USD\n", amountRub, convertRUBToUSD(amountRub, rate))
 
 	fmt.Println("2. Calculation of a right triangle. Enter triangle legs:")
 	fmt.Scanln(&legOne, &legTwo)
+	if err != nil {
+		return
+	}
 	hypotenuse, area, perimeter := calcTriangle(legOne, legTwo)
 	fmt.Printf("Hypotenuse = %.2f Area = %.2f Perimeter = %.2f\n", hypotenuse, area, perimeter)
 
 	fmt.Println("3. Calculation of bank deposit. Enter amount and percent:")
 	fmt.Scanln(&amount, &percent)
+	if err != nil {
+		return
+	}
 	amount = calcContribution(amount, percent)
 	amount = calcContribution(amount, percent)
 	amount = calcContribution(amount, percent)
