@@ -1,5 +1,6 @@
 package testing
 
+// How to create package:
 // save to %GOPATH%/src/statistics
 // move to this folder and make:
 // > go install
