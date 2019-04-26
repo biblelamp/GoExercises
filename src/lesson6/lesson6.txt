@@ -25,3 +25,4 @@ https://golang.org/pkg/image/
 Раздел урока № 5. Reflect
 https://golang.org/pkg/reflect/
 
+    https://golangbot.com/reflection/
