@@ -5,6 +5,11 @@ import (
 	"math"
 )
 
+/*
+ * Syntax Go. Homework 4
+ * Sergey Iryupin, dated May 04, 2019
+ */
+
 // Shape interface for shapes
 type Shape interface {
 	area() float64
