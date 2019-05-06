@@ -7,19 +7,25 @@ type Point struct {
 	x, y int
 }
 
+func (point Point) isValid() bool {
+	return point.x > -1 && point.y > -1 && point.x < 8 && point.y < 8
+}
+
 func (point Point) nextPoint(dx, dy int) (next Point, ok bool) {
 	next = Point{point.x + dx, point.y + dy}
-	ok = next.x > -1 && next.y > -1 && next.x < 8 && next.y < 8
+	ok = next.isValid()
 	return
 }
 
 func (point Point) nextPoints() []Point {
 	points := make([]Point, 0, 8)
-	dxy := [4][2]int{{-2, 1}, {-1, 2}, {1, 2}, {2, 1}}
-	for _, xy := range dxy {
-		for _, k := range [2]int{1, -1} {
-			if next, ok := point.nextPoint(xy[0], xy[1]*k); ok {
-				points = append(points, next)
+	if point.isValid() {
+		dxy := [4][2]int{{-2, 1}, {-1, 2}, {1, 2}, {2, 1}}
+		for _, xy := range dxy {
+			for _, k := range [2]int{1, -1} {
+				if next, ok := point.nextPoint(xy[0], xy[1]*k); ok {
+					points = append(points, next)
+				}
 			}
 		}
 	}
