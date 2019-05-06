@@ -17,11 +17,10 @@ func (point Point) nextPoints() []Point {
 	points := make([]Point, 0, 8)
 	dxy := [4][2]int{{-2, 1}, {-1, 2}, {1, 2}, {2, 1}}
 	for _, xy := range dxy {
-		if next, ok := point.nextPoint(xy[0], xy[1]); ok {
-			points = append(points, next)
-		}
-		if next, ok := point.nextPoint(xy[0], -xy[1]); ok {
-			points = append(points, next)
+		for _, k := range [2]int{1, -1} {
+			if next, ok := point.nextPoint(xy[0], xy[1]*k); ok {
+				points = append(points, next)
+			}
 		}
 	}
 	return points
