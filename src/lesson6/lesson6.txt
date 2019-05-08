@@ -3,27 +3,27 @@
 Раздел урока № 1. testing
 https://golang.org/pkg/testing/
 
-
-Раздел урока № 2. net/http
-https://golang.org/pkg/net/http/
-
-    https://gowebexamples.com/http-server/
-    http://golang-book.ru/chapter-13-core-packages.html
-
-Раздел урока № 3. html
-https://golang.org/pkg/html/
-
-    https://gowebexamples.com/templates/
-
-Раздел урока № 4. Image
+Раздел урока № 2. Image
 https://golang.org/pkg/image/
 
     https://www.devdungeon.com/content/working-images-go
     https://stackoverflow.com/questions/28992396/draw-a-rectangle-in-golang
     http://www.golangprograms.com/how-to-draw-a-rectangle-in-golang.html
 
+Раздел урока № 3. html
+https://golang.org/pkg/html/
+
+    https://gowebexamples.com/templates/
+
+Раздел урока № 4. net/http
+https://golang.org/pkg/net/http/
+
+    https://gowebexamples.com/http-server/
+    http://golang-book.ru/chapter-13-core-packages.html
+
 Раздел урока № 5. Reflect
 https://golang.org/pkg/reflect/
 
+    https://habr.com/ru/post/415171/ (RU)
     https://habr.com/ru/post/306304/ (RU)
     https://golangbot.com/reflection/
