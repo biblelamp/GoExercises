@@ -2,6 +2,7 @@ package main
 
 import (
 	"html/template"
+	"log"
 	"os"
 )
 
@@ -16,15 +17,21 @@ type TodoPageData struct {
 }
 
 func main() {
-	tmpl := template.Must(template.ParseFiles("template.html"))
+	tmpl, err := template.ParseFiles("template.html")
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	data := TodoPageData{
+	data := TodoPageData {
 		PageTitle: "TODO list",
-		Todos: []Todo{
+		Todos: []Todo {
 			{Title: "Task 1", Done: false},
 			{Title: "Task 2", Done: true},
 			{Title: "Task 3", Done: true},
 		},
 	}
-	tmpl.Execute(os.Stdout, data)
+	err = tmpl.Execute(os.Stdout, data)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
