@@ -1,16 +1,14 @@
 Урок 5. Стандартная библиотека
 
-Раздел урока № 1. flags, log
-https://golang.org/pkg/flag/
-https://golang.org/pkg/log/
+Раздел урока № 1. time
+https://golang.org/pkg/time/
 
-    Пакет flag реализует работу с флагами командной строки.
+    https://machiel.me/post/time-in-go-a-primer/
+    http://demin.ws/blog/russian/2012/04/27/date-and-time-formatting-in-go/
 
-    https://gobyexample.ru/command-line-flags.html
-    log: https://stackoverrun.com/ru/q/11136441
+    time.go
 
-    flags.go
-    args.go
+    TOADD: time.Parse, location, time shifting, Before, After и Since
 
 Раздел урока № 2. strings
 https://golang.org/pkg/strings/
@@ -20,20 +18,31 @@ https://golang.org/pkg/strings/
 
     strings.go
 
-Раздел урока № 3. time
-https://golang.org/pkg/time/
-
-    https://machiel.me/post/time-in-go-a-primer/
-    http://demin.ws/blog/russian/2012/04/27/date-and-time-formatting-in-go/
-    time.go
-
-Раздел урока № 4. files
-https://golang.org/pkg/io/
+Раздел урока № 3. files
+https://golang.org/pkg/os/
+https://golang.org/pkg/io/ioutil/
+https://golang.org/pkg/bufio/ TOADD
 
     fileread.go
     filereadshort.go
     filecreate.go
     dirread.go
+
+    TOADD: reading big files (by lines, using bufio pkg)
+
+Раздел урока № 4. flags, log
+https://golang.org/pkg/flag/
+https://golang.org/pkg/log/
+
+    Пакет flag реализует работу с флагами командной строки.
+
+    https://gobyexample.ru/command-line-flags.html
+    log: https://stackoverrun.com/ru/q/11136441
+
+    args.go
+    flags.go
+
+    TOADD: info about -h flag
 
 Раздел урока № 5. encoding
 https://golang.org/pkg/encoding/
