@@ -9,17 +9,17 @@ import (
 
 func main() {
 	if len(os.Args) < 3 {
-		fmt.Println("Usage:\ncopy <source_file_name> <dest_file_name>")
+		fmt.Println("Usage:\ncopy <dest_file_name> <source_file_name>")
 		os.Exit(0)
 	}
 
-	source, err := os.Open(os.Args[1])
+	source, err := os.Open(os.Args[2])
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer source.Close()
 
-	destination, err := os.Create(os.Args[2])
+	destination, err := os.Create(os.Args[1])
 	if err != nil {
 		log.Fatal(err)
 	}
