@@ -53,9 +53,15 @@
 Урок 3. Массивы, срезы, карты, структуры, JSON
 
    1. Разбор домашнего задания
+      http://demin.ws/blog/russian/2010/03/06/what-is-faster-on-eratosthenes-seive-go-c-cpp/
+
    2. Основная тема
 
 Урок 4. Методы и интерфейсы
+
+   1. Разбор домашнего задания
+   2. Основная тема
+
 Урок 5. Стандартная библиотека: time, string, os, io/ioutil, flag, log, encoding/XML
 Урок 6. Стандартная библиотека: testing, net/http, html, image, reflect
 Урок 7. Горутины и каналы
