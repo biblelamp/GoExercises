@@ -4,6 +4,9 @@ My exercises with Go
 ## Introduction to Go programming (RU | EN)
 http://golang-book.ru | https://www.golang-book.com/books/intro
 
+## The Go Programming Language (source code)
+http://www.gopl.io/ | https://github.com/adonovan/gopl.io/
+
 ## Little Go book (RU)
 https://sefus.ru/little-go-book
 
