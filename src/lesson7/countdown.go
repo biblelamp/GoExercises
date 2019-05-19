@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Countdown start...")
+	fmt.Println("Countdown started.")
 	tick := make(<-chan time.Time)    // creating unidirectional chanel
 	tick = time.Tick(1 * time.Second) // creating tick flow
 	for countdown := 10; countdown > 0; countdown-- {
