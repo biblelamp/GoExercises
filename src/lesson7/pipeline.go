@@ -11,9 +11,8 @@ func main() {
 
 	// генерация
 	go func() {
-		for x := 0; x < 10; x++ {
+		for x := 0; ; x++ {
 			naturals <- x
-			time.Sleep(1 * time.Second)
 		}
 		close(naturals)
 	}()
@@ -29,5 +28,6 @@ func main() {
 	// печать
 	for {
 		fmt.Println(<-squares)
+		time.Sleep(1 * time.Second)
 	}
 }
