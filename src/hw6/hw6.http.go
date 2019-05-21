@@ -15,6 +15,7 @@ func hello(res http.ResponseWriter, req *http.Request) {
 		`<doctype html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Hello `+name+`</title>
 	</head>
 	<body>

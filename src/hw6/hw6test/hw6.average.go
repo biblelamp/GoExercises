@@ -1,4 +1,4 @@
-package hw6
+package hw6test
 
 func Average(xs []float64) float64 {
 	return Sum(xs) / float64(len(xs))
