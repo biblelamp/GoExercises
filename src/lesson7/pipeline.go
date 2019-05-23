@@ -14,7 +14,6 @@ func main() {
 		for x := 0; ; x++ {
 			naturals <- x
 		}
-		close(naturals)
 	}()
 
 	// возведение в квадрат
