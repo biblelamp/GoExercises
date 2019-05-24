@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
-	"log"
 	"net/http"
 	"os"
 	"time"
@@ -12,23 +11,28 @@ import (
 
 func main() {
 	start := time.Now()
+	ch := make(chan string)
 	for _, url := range os.Args[1:] {
-		fetch(url)
+		go fetch(url, ch)
+	}
+	for range os.Args[1:] {
+		fmt.Print(<-ch) // receive from channel
 	}
 	fmt.Printf("%.2fs elapsed\n", time.Since(start).Seconds())
 }
 
-func fetch(url string) {
+func fetch(url string, ch chan<- string) {
 	start := time.Now()
 	resp, err := http.Get(url)
 	if err != nil {
-		log.Fatal(err)
+		ch <- fmt.Sprint(err)
+		return
 	}
-	//bytes, err := ioutil.ReadAll(resp.Body)
 	nbytes, err := io.Copy(ioutil.Discard, resp.Body) // to devNull
 	resp.Body.Close()
 	if err != nil {
-		log.Fatal(err)
+		ch <- fmt.Sprintf("while reading %s: %v", url, err)
+		return
 	}
-	fmt.Printf("%.2fs %7d %s\n", time.Since(start).Seconds(), nbytes, url)
+	ch <- fmt.Sprintf("%.2fs %7d %s\n", time.Since(start).Seconds(), nbytes, url)
 }
