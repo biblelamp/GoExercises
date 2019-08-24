@@ -9,7 +9,7 @@ func main() {
     guess := -1
     number := rand.Intn(10)
     for count < limit && guess != number {
-        fmt.Print("Guess [", limit - count, " attempts] the number (0..9):")
+        fmt.Print("Guess [", limit - count, " attempts] the number (0..9): ")
         fmt.Scanln(&guess)
         if number != guess {
             if guess > number {
@@ -19,5 +19,10 @@ func main() {
             }
         count++
         }
+    }
+    if guess == number {
+        fmt.Println("You WON!");
+    } else {
+        fmt.Println("You lose");
     }
 }
