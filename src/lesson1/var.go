@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func variables() {
+func main() {
 
 	a := new(int)
 	b := new(int)
