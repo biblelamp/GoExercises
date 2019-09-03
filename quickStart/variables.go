@@ -11,6 +11,10 @@ package main
 func main() {
     i := 4
     f := 4.5
+    l := false
+    s := "string"
     println(i)
     println(f)
+    println(l)
+    println(s)
 }
