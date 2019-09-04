@@ -2,11 +2,13 @@ package main
 
 import "fmt"
 import "math/rand"
+import "time"
 
 func main() {
     limit := 3
     count := 0
     guess := -1
+    rand.Seed(time.Now().UnixNano())
     number := rand.Intn(10)
     for count < limit && guess != number {
         fmt.Print("Guess [", limit - count, " attempts] the number (0..9): ")
@@ -17,7 +19,7 @@ func main() {
             } else {
                 fmt.Println("Your number is less")
             }
-        count++
+            count++
         }
     }
     if guess == number {
