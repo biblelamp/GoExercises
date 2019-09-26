@@ -5,13 +5,12 @@ import "math/rand"
 import "time"
 
 func main() {
-    limit := 3
     count := 0
     guess := -1
     rand.Seed(time.Now().UnixNano())
     number := rand.Intn(10)
-    for count < limit && guess != number {
-        fmt.Print("Guess [", limit - count, " attempts] the number (0..9): ")
+    for count < 3 && guess != number {
+        fmt.Print("Guess [", 3 - count, " attempts] the number (0..9): ")
         fmt.Scanln(&guess)
         if number != guess {
             if guess > number {
