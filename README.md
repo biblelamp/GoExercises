@@ -34,7 +34,7 @@ https://habr.com/ru/post/248857
 ## Best IDE for Go? (RU)
 https://code.tutsplus.com/ru/tutorials/what-are-the-best-golang-ides--cms-28889
 
-## Golang plugin on Notepad++
+## Golang plugin on Notepad++ (syntax highlight)
 https://stackoverflow.com/questions/27747457/golang-plugin-on-notepad
 
 ## Eight mistakes I made when I was a junior (RU)
