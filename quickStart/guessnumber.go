@@ -12,18 +12,18 @@ func main() {
     for count < 3 && guess != number {
         fmt.Print("Guess [", 3 - count, " attempts] the number (0..9): ")
         fmt.Scanln(&guess)
-        if number != guess {
-            if guess > number {
-                fmt.Println("Your number is greater")
-            } else {
-                fmt.Println("Your number is less")
-            }
+        if guess != number {
+            fmt.Println("Your number is", OneFromTwo(guess > number, "greater", "less"))
             count++
         }
     }
-    if guess == number {
-        fmt.Println("You WON!");
+    fmt.Println(OneFromTwo(guess == number, "You WON!", "You lose"))
+}
+
+func OneFromTwo(cond bool, one string, two string) string {
+    if cond {
+        return one
     } else {
-        fmt.Println("You lose");
+        return two
     }
 }
