@@ -34,5 +34,5 @@ https://ru.wikipedia.org/wiki/Go
 План:
 1. Получение ссылки для импорта xml
 2. Чтение данных по адресу
-3. Парсинг xml данных
+3. Парсинг xml данных (https://tutorialedge.net/golang/parsing-xml-with-golang/)
 4. Вывод результатов
