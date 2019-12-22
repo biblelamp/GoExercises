@@ -33,6 +33,7 @@ https://ru.wikipedia.org/wiki/Go
 
 План:
 1. Получение ссылки для импорта xml
-2. Чтение данных по адресу
-3. Парсинг xml данных (https://tutorialedge.net/golang/parsing-xml-with-golang/)
-4. Вывод результатов
+2. Создание нужной структуры (https://www.onlinetool.io/xmltogo/)
+3. Чтение данных по адресу
+4. Парсинг xml данных (https://tutorialedge.net/golang/parsing-xml-with-golang/)
+5. Вывод результатов
