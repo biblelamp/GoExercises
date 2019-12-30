@@ -38,7 +38,8 @@ https://ru.wikipedia.org/wiki/Go
 4. Парсинг xml данных (https://tutorialedge.net/golang/parsing-xml-with-golang/)
 5. Вывод результатов
 
-//Продолжение: html+служба
+//Продолжение: генерация html+служба
 
 План:
-1. 
+1. Простой hello-сервер на Go
+2. 
