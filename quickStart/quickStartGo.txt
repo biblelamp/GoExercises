@@ -27,6 +27,9 @@ https://ru.wikipedia.org/wiki/Go
 7. Пакеты и импорт, чтение консоли Scanln(), случайные числа rand.Intn(N)
 8. Игра "Угадай число", функция rand.Seed(time.Now().UnixNano())
 
+Ссылка на статью "Быстрый старт с Go: начало"
+https://docs.google.com/document/d/1GfWx31RVa-rsYRA1B8EwcYyCAfYX0c_DgBeRwEp9YbM
+
 //
 //Продолжение: сканер погоды/валют
 //
