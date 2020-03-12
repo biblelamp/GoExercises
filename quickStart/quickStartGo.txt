@@ -28,7 +28,10 @@ https://ru.wikipedia.org/wiki/Go
 8. Игра "Угадай число", функция rand.Seed(time.Now().UnixNano())
 
 Ссылка на статью "Быстрый старт с Go: начало"
-https://docs.google.com/document/d/1GfWx31RVa-rsYRA1B8EwcYyCAfYX0c_DgBeRwEp9YbM
+https://docs.google.com/document/d/1GfWx31RVa-rsYRA1B8EwcYyCAfYX0c_DgBeRwEp9YbM | https://geekbrains.ru/posts/bystryj-start-s-go-pervye-shagi
+
+Телеграм-чат:
+https://t.me/joinchat/EuijNlgqBbVfWZ_8w2ENZA открыт для ваших вопросов.
 
 //
 //Продолжение: сканер погоды/валют
