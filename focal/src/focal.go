@@ -18,9 +18,9 @@ func main() {
 	//stack.Push(1)
 	//stack.Push(2)
 
-	stack := calculate.ToPostfix("2*(1+1)")
+	stack := calculate.ToPostfix("3^2+5")
 
-	fmt.Println(calculate.Calculate("2*(1+1)+5"))
+	fmt.Println(calculate.Calculate("3^2+5"))
 
 	//letters := []interface{}{"a", 123, "c", "d"}
 	//fmt.Println(letters)

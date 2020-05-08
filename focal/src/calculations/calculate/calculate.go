@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"strconv"
+	"math"
 )
 
 func Calculate(expression string) float64 {
@@ -17,6 +18,15 @@ func Calculate(expression string) float64 {
 			result.Push(result.Pop().(float64) + result.Pop().(float64))
 		case "*":
 			result.Push(result.Pop().(float64) * result.Pop().(float64))
+		case "-":
+			second := result.Pop().(float64)
+			result.Push(result.Pop().(float64) - second)
+		case "/":
+			second := result.Pop().(float64)
+			result.Push(result.Pop().(float64) / second)
+		case "^":
+			second := result.Pop().(float64)
+			result.Push(math.Pow(result.Pop().(float64), second))
 		default:
 			result.Push(item)
 		}
