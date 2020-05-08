@@ -12,3 +12,6 @@ http://samlib.ru/u/uirh/kn_o_foc.shtml
 
 #### Stack Implementation in Go
 http://www.code2succeed.com/stack-implementation-in-golang/
+
+#### How to write packages in Go (RU)
+https://habr.com/ru/company/ruvds/blog/464289/
