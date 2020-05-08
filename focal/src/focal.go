@@ -20,6 +20,8 @@ func main() {
 
 	stack := calculate.ToPostfix("2*(1+1)")
 
+	fmt.Println(calculate.Calculate("2*(1+1)+5"))
+
 	//letters := []interface{}{"a", 123, "c", "d"}
 	//fmt.Println(letters)
 

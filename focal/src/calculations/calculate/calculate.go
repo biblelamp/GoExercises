@@ -1,6 +1,28 @@
 package calculate
 
-import "calculations/stack"
+import (
+	"calculations/stack"
+	"fmt"
+	"log"
+	"strconv"
+)
+
+func Calculate(expression string) float64 {
+	data := ToPostfix(expression)
+	result := new(stack.Stack)
+	for data.Len() > 0 {
+		item := data.Pop()
+		switch fmt.Sprint(item) {
+		case "+":
+			result.Push(result.Pop().(float64) + result.Pop().(float64))
+		case "*":
+			result.Push(result.Pop().(float64) * result.Pop().(float64))
+		default:
+			result.Push(item)
+		}
+	}
+	return result.Pop().(float64)
+}
 
 func ToPostfix(expression string) *stack.Stack {
 	result := new(stack.Stack)
@@ -21,7 +43,11 @@ func ToPostfix(expression string) *stack.Stack {
 		} else if c == "(" {
 			stackOper.Push(c)
 		} else {
-			result.Add(c)
+			f, err := strconv.ParseFloat(c, 64)
+			if err != nil {
+				log.Fatal(err)
+			}
+			result.Add(f)
 		}
 	}
 	for stackOper.Len() > 0 {
