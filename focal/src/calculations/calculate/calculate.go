@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"strconv"
+	"strings"
 	"math"
 )
 
@@ -35,10 +36,23 @@ func Calculate(expression string) float64 {
 }
 
 func ToPostfix(expression string) *stack.Stack {
+	expression = strings.ReplaceAll(expression, " ", "")
 	result := new(stack.Stack)
 	stackOper := new(stack.Stack)
+	numberOrVariable := ""
 	for i := 0; i < len(expression); i++ {
 		c := string(expression[i])
+
+		// add number or variable
+		if precedence(c) > -1 && len(numberOrVariable) > 0 {
+			if value, err := strconv.ParseFloat(numberOrVariable, 64); err != nil {
+				log.Fatal(err)
+			} else {
+				result.Add(value)
+			}
+			numberOrVariable = ""
+		}
+
 		if precedence(c) > 0 {
 			for stackOper.Len() > 0 && precedence(stackOper.Peek().(string)) >= precedence(c) {
 				result.Add(stackOper.Pop())
@@ -53,17 +67,25 @@ func ToPostfix(expression string) *stack.Stack {
 		} else if c == "(" {
 			stackOper.Push(c)
 		} else {
-			f, err := strconv.ParseFloat(c, 64)
-			if err != nil {
-				log.Fatal(err)
-			}
-			result.Add(f)
+			numberOrVariable += c
+		}
+	}
+	if len(numberOrVariable) > 0 {
+		if value, err := strconv.ParseFloat(numberOrVariable, 64); err != nil {
+			log.Fatal(err)
+		} else {
+			result.Add(value)
 		}
 	}
 	for stackOper.Len() > 0 {
 		result.Add(stackOper.Pop())
 	}
 	return result
+}
+
+func isFloat(value string) bool {
+	_, err := strconv.ParseFloat(value, 64)
+	return err == nil
 }
 
 func precedence(c string) int {
@@ -74,6 +96,8 @@ func precedence(c string) int {
 		return 2
 	case "^":
 		return 3
+	case "(", ")":
+		return 0
 	}
 	return -1
 }
