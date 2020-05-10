@@ -1,12 +1,12 @@
 package calculate
 
 import (
-	"calculations/stack"
 	"fmt"
 	"log"
+	"math"
 	"strconv"
 	"strings"
-	"math"
+	"util/stack"
 )
 
 func Calculate(expression string) float64 {
@@ -40,8 +40,8 @@ func ToPostfix(expression string) *stack.Stack {
 	result := new(stack.Stack)
 	stackOper := new(stack.Stack)
 	numberOrVariable := ""
-	for i := 0; i < len(expression); i++ {
-		c := string(expression[i])
+	for _, item := range expression {
+		c := string(item)
 
 		// add number or variable
 		if precedence(c) > -1 && len(numberOrVariable) > 0 {
@@ -81,11 +81,6 @@ func ToPostfix(expression string) *stack.Stack {
 		result.Add(stackOper.Pop())
 	}
 	return result
-}
-
-func isFloat(value string) bool {
-	_, err := strconv.ParseFloat(value, 64)
-	return err == nil
 }
 
 func precedence(c string) int {
