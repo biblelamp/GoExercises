@@ -2,14 +2,14 @@ package calculate
 
 import (
 	"fmt"
-	"log"
 	"math"
+	"reflect"
 	"strconv"
 	"strings"
 	"util/stack"
 )
 
-func Calculate(expression string) float64 {
+func Calculate(expression string, variables map[string]float64) float64 {
 	data := ToPostfix(expression)
 	result := new(stack.Stack)
 	for data.Len() > 0 {
@@ -29,7 +29,15 @@ func Calculate(expression string) float64 {
 			second := result.Pop().(float64)
 			result.Push(math.Pow(result.Pop().(float64), second))
 		default:
-			result.Push(item)
+			if reflect.TypeOf(item).String() == "float64" {
+				result.Push(item)
+			} else {
+				if value, ok := variables[item.(string)]; ok {
+					result.Push(value)
+				} else {
+					result.Push(.0)
+				}
+			}
 		}
 	}
 	return result.Pop().(float64)
@@ -40,13 +48,13 @@ func ToPostfix(expression string) *stack.Stack {
 	result := new(stack.Stack)
 	stackOper := new(stack.Stack)
 	numberOrVariable := ""
-	for _, item := range expression {
+	for i, item := range expression {
 		c := string(item)
 
 		// add number or variable
 		if precedence(c) > -1 && len(numberOrVariable) > 0 {
 			if value, err := strconv.ParseFloat(numberOrVariable, 64); err != nil {
-				log.Fatal(err)
+				result.Add(numberOrVariable)
 			} else {
 				result.Add(value)
 			}
@@ -54,6 +62,10 @@ func ToPostfix(expression string) *stack.Stack {
 		}
 
 		if precedence(c) > 0 {
+			// for expressions like: -3; 2*(-2-3)
+			if c == "-" && (result.Len() == 0 || expression[i-1:i] == "(") {
+				result.Add(.0)
+			}
 			for stackOper.Len() > 0 && precedence(stackOper.Peek().(string)) >= precedence(c) {
 				result.Add(stackOper.Pop())
 			}
@@ -72,7 +84,7 @@ func ToPostfix(expression string) *stack.Stack {
 	}
 	if len(numberOrVariable) > 0 {
 		if value, err := strconv.ParseFloat(numberOrVariable, 64); err != nil {
-			log.Fatal(err)
+			result.Add(numberOrVariable)
 		} else {
 			result.Add(value)
 		}

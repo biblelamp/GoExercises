@@ -10,8 +10,12 @@ import (
 	"util"
 )
 
+var formatNumber string
+var variables = make(map[string]float64)
+
 func Run() {
 	var line string
+	formatNumber = messages.DEFAULT_FORMAT_NUMBER
 	println(messages.WELCOME)
 	scanner := bufio.NewScanner(os.Stdin)
 	for {
@@ -30,8 +34,10 @@ func commandAsk() {
 
 }
 
-func commandSet() {
-
+func commandSet(line string) {
+	parameters := strings.Split(line[strings.Index(line, " ")+1:], "=")
+	result := calculate.Calculate(parameters[1], variables)
+	variables[parameters[0]] = result
 }
 
 func commandType(line string) {
@@ -42,7 +48,9 @@ func commandType(line string) {
 		} else if item[0:1] == "%" {
 			// TODO set format
 		} else if item[0:1] == "$" {
-			// TODO print all vbariables
+			for key, value := range variables {
+				fmt.Printf("%s()="+formatNumber+"\n", key, value)
+			}
 		} else if item == "!" {
 			fmt.Print("\n")
 		} else if item == "#" {
@@ -50,8 +58,8 @@ func commandType(line string) {
 		} else if item == ":" {
 			fmt.Print("\t")
 		} else {
-			result := calculate.Calculate(item)
-			fmt.Print(result)
+			result := calculate.Calculate(item, variables)
+			fmt.Printf(formatNumber, result)
 		}
 	}
 }
@@ -59,6 +67,8 @@ func commandType(line string) {
 func processLine(line string) float32 {
 	tokens := strings.Split(line, " ")
 	switch strings.ToUpper(tokens[0]) {
+	case messages.S, messages.SET:
+		commandSet(line)
 	case messages.T, messages.TYPE:
 		commandType(line)
 	case messages.Q, messages.QUIT:
