@@ -1,2 +1,5 @@
 + implement Stack? for calculation
 + implement InfixToPostfix func for calculation
++ implement calculation of Postfix
++ added variables in calculations
+- added program lines
