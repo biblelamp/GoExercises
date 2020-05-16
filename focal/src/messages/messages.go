@@ -1,6 +1,6 @@
 package messages
 
-const WELCOME = "GoFocal, version 0.1, 12 May 2020"
+const WELCOME = "GoFocal, version 0.3, 16 May 2020"
 const PROMPT = "*"
 
 const A = "A"

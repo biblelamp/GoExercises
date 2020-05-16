@@ -66,15 +66,19 @@ func commandType(line string) {
 
 func processLine(line string) float32 {
 	tokens := strings.Split(line, " ")
-	switch strings.ToUpper(tokens[0]) {
-	case messages.S, messages.SET:
-		commandSet(line)
-	case messages.T, messages.TYPE:
-		commandType(line)
-	case messages.Q, messages.QUIT:
-		return -1
-	default:
-		fmt.Printf(messages.COMMAND_NOT_RECOGNIZED, tokens[0])
+	if util.IsValidLineNumber(tokens[0]) {
+		print(tokens[0])
+	} else {
+		switch strings.ToUpper(tokens[0]) {
+		case messages.S, messages.SET:
+			commandSet(line)
+		case messages.T, messages.TYPE:
+			commandType(line)
+		case messages.Q, messages.QUIT:
+			return -1
+		default:
+			fmt.Printf(messages.COMMAND_NOT_RECOGNIZED, tokens[0])
+		}
 	}
 	return 0
 }

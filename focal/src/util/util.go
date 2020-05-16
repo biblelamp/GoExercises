@@ -1,6 +1,19 @@
 package util
 
-import "strings"
+import (
+	"regexp"
+	"strings"
+)
+
+func IsValidGroupNumber(numGrp string) bool {
+	result, _ := regexp.MatchString(`^[1-9]{1}\d?`, numGrp)
+	return result
+}
+
+func IsValidLineNumber(numLine string) bool {
+	result, _ := regexp.MatchString(`^[1-9]{1}\d?\.[1-9]{1}\d?$`, numLine)
+	return result
+}
 
 func SplitString(str string) []string {
 	var result []string
