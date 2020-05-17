@@ -6,12 +6,15 @@ import (
 	"fmt"
 	"messages"
 	"os"
+	"sort"
+	"strconv"
 	"strings"
 	"util"
 )
 
 var formatNumber string
 var variables = make(map[string]float64)
+var programLines = make(map[float64]string)
 
 func Run() {
 	var line string
@@ -31,7 +34,7 @@ func Run() {
 }
 
 func commandAsk() {
-
+	// TODO implement ASK command
 }
 
 func commandSet(line string) {
@@ -64,16 +67,37 @@ func commandType(line string) {
 	}
 }
 
+func commandWrite(tokens []string) {
+	var keys []float64
+	for k := range programLines {
+		keys = append(keys, k)
+	}
+	sort.Float64s(keys)
+	for _, key := range keys {
+		fmt.Printf("%05.2f %s\n", key, programLines[key])
+	}
+}
+
 func processLine(line string) float32 {
 	tokens := strings.Split(line, " ")
 	if util.IsValidLineNumber(tokens[0]) {
-		print(tokens[0])
+		if value, err := strconv.ParseFloat(tokens[0], 32); err == nil {
+			if len(tokens) > 1 {
+				// to add line
+				programLines[value] = line[strings.Index(line, " ")+1:]
+			} else {
+				// erase line
+				delete(programLines, value)
+			}
+		}
 	} else {
 		switch strings.ToUpper(tokens[0]) {
 		case messages.S, messages.SET:
 			commandSet(line)
 		case messages.T, messages.TYPE:
 			commandType(line)
+		case messages.W, messages.WRITE:
+			commandWrite(tokens)
 		case messages.Q, messages.QUIT:
 			return -1
 		default:

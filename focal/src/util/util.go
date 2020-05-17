@@ -11,7 +11,7 @@ func IsValidGroupNumber(numGrp string) bool {
 }
 
 func IsValidLineNumber(numLine string) bool {
-	result, _ := regexp.MatchString(`^[1-9]{1}\d?\.[1-9]{1}\d?$`, numLine)
+	result, _ := regexp.MatchString(`^[1-9]{1}\d?\.\d{1}\d?$`, numLine)
 	return result
 }
 
