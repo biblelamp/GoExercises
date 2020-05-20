@@ -90,10 +90,13 @@ func main() {
     }
 
     //fmt.Print(string(byteValue))
-    fmt.Println(url.PathUnescape(weater.REPORT.TOWN.Sname))
+    town := weater.REPORT.TOWN.Sname
+    fmt.Println(url.PathUnescape(town))
+
     forecast := weater.REPORT.TOWN.FORECAST
-    for i := 0; i < len(forecast); i++ {
-        fmt.Printf("Day: %s/%s %s:00\n", forecast[i].Day, forecast[i].Month, forecast[i].Hour)
-        fmt.Println("T.Max:", forecast[i].TEMPERATURE.Max)
+    //for i := 0; i < len(forecast); i++ {
+    for _, value := range forecast {
+        fmt.Printf("Day: %s/%s %s:00 T.Max: %s\n",
+            value.Day, value.Month, value.Hour, value.TEMPERATURE.Max)
     }
 }
