@@ -91,17 +91,20 @@ func processLine(line string) float32 {
 			}
 		}
 	} else {
-		switch strings.ToUpper(tokens[0]) {
-		case messages.S, messages.SET:
-			commandSet(line)
-		case messages.T, messages.TYPE:
-			commandType(line)
-		case messages.W, messages.WRITE:
-			commandWrite(tokens)
-		case messages.Q, messages.QUIT:
-			return -1
-		default:
-			fmt.Printf(messages.COMMAND_NOT_RECOGNIZED, tokens[0])
+		for _, item := range util.SplitStringWithDelimiter(line, ";") {
+			tokens := strings.Split(item, " ")
+			switch strings.ToUpper(tokens[0]) {
+			case messages.S, messages.SET:
+				commandSet(item)
+			case messages.T, messages.TYPE:
+				commandType(item)
+			case messages.W, messages.WRITE:
+				commandWrite(tokens)
+			case messages.Q, messages.QUIT:
+				return -1
+			default:
+				fmt.Printf(messages.COMMAND_NOT_RECOGNIZED, tokens[0])
+			}
 		}
 	}
 	return 0
