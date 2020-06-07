@@ -11,7 +11,7 @@ func main() {
     //guess := -1
     //number := rand.Intn(10)
     for count < 3 && guess != number {
-        fmt.Print("Guess [", 3 - count, " attempts] the number (0..9): ")
+        fmt.Printf("Guess [%d attempts] the number (0..9): ", 3 - count)
         fmt.Scanln(&guess)
         if guess != number {
             fmt.Println("Your number is", OneFromTwo(guess > number, "greater", "less"))
