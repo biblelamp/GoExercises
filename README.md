@@ -38,4 +38,7 @@ https://code.tutsplus.com/ru/tutorials/what-are-the-best-golang-ides--cms-28889
 https://stackoverflow.com/questions/27747457/golang-plugin-on-notepad
 
 ## Eight mistakes I made when I was a junior (RU)
-https://habr.com/ru/company/everydaytools/blog/447854/
+https://habr.com/ru/company/everydaytools/blog/447854
+
+## Go language: ORM selection (RU)
+https://habr.com/ru/company/simbirsoft/blog/458074
