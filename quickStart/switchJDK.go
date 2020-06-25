@@ -1,7 +1,12 @@
 package main
 
-// Computer\HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager\Environment
-// https://stackoverflow.com/questions/46542609/create-a-registry-key-string-with-go
+/*
+reg key:
+
+reg query "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Environment" /v JAVA_HOME
+
+https://stackoverflow.com/questions/46542609/create-a-registry-key-string-with-go
+*/
 
 import (
     //"golang.org/x/sys/windows/registry"
