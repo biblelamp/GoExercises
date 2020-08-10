@@ -27,8 +27,11 @@ https://ru.wikipedia.org/wiki/Go
 7. Пакеты и импорт, чтение консоли Scanln(), случайные числа rand.Intn(N)
 8. Игра "Угадай число", функция rand.Seed(time.Now().UnixNano())
 
-Ссылка на статью "Быстрый старт с Go: начало"
+Быстрый старт с Go: начало
 https://docs.google.com/document/d/1GfWx31RVa-rsYRA1B8EwcYyCAfYX0c_DgBeRwEp9YbM | https://geekbrains.ru/posts/bystryj-start-s-go-pervye-shagi
+
+Быстрый старт с Go: сканер погоды
+https://geekbrains.ru/posts/bystryj-start-s-go-skaner-pogody
 
 Телеграм-чат:
 https://t.me/joinchat/EuijNlgqBbVfWZ_8w2ENZA открыт для ваших вопросов.
