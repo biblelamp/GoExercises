@@ -36,6 +36,12 @@ https://geekbrains.ru/posts/bystryj-start-s-go-skaner-pogody
 Телеграм-чат:
 https://t.me/joinchat/EuijNlgqBbVfWZ_8w2ENZA открыт для ваших вопросов.
 
+Статья: Go-разработчик — новая профессия в GeekBrains
+https://geekbrains.ru/posts/go-razrabotchik-novaya-professiya-v-geekbrains
+
+Онлайн курс: Go-разработчик
+https://godeveloper.geekbrains.ru/
+
 //
 //Продолжение: сканер погоды/валют
 //
