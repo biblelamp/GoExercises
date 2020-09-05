@@ -99,6 +99,11 @@ Go — быстро набирающий популярность язык пр�
 Ссылка на статью "Быстрый старт с Go: сканер погоды"
 https://docs.google.com/document/d/12tFL0L13dn50o32PhrkUlKLOW1zf2zUg8s1u5jFoiyg
 
+Сменить источник данных:
+OpenWeather https://home.openweathermap.org
+
+http://api.openweathermap.org/data/2.5/weather?q=moscow&units=metric&mode=xml&appid=25e0e2f3ee24a66baa5ab12bcbc3a48c
+
 //
 //Продолжение: вебслужбы и генерация html
 //
