@@ -25,4 +25,9 @@ func main() {
 		default: fmt.Println("Unknown Number")
 		}
 	}
+
+	array := []int{25,20,15,10,5}
+	for i, value := range array {
+		fmt.Println(i, ":", value)
+	}
 }
