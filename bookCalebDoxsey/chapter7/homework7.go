@@ -43,6 +43,11 @@ func main() {
 	fmt.Println("1/2 =", result, flag)
 	result, flag = divideAndCheck(2)
 	fmt.Println("2/2 =", result, flag)
+
+	fmt.Println(findMax(5, 4, 3, 21, 12))
+
+	makeOdd := makeOddGenerator()
+	fmt.Println(makeOdd(), makeOdd(), makeOdd(), makeOdd())
 }
 
 func average(xs []float64) float64 {
@@ -113,5 +118,26 @@ func sum(slice []int) int {
 }
 
 func divideAndCheck(value int) (int, bool) {
-	return value / 2, value % 2 == 0.
+	result := value / 2
+	flag := value % 2 == 0
+	return result, flag
+}
+
+func findMax(list ...int) int {
+	result := list[0]
+	for _, v := range list {
+		if v > result {
+			result = v
+		}
+	}
+	return result
+}
+
+func makeOddGenerator() func() uint {
+	i := uint(1)
+	return func() (ret uint) {
+		ret = i
+		i += 2
+		return
+	}
 }
