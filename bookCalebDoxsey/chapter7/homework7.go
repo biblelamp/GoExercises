@@ -48,6 +48,8 @@ func main() {
 
 	makeOdd := makeOddGenerator()
 	fmt.Println(makeOdd(), makeOdd(), makeOdd(), makeOdd())
+
+	fmt.Println("Fibonacci(15)=", fibonacci(15))
 }
 
 func average(xs []float64) float64 {
@@ -140,4 +142,11 @@ func makeOddGenerator() func() uint {
 		i += 2
 		return
 	}
+}
+
+func fibonacci(x int) int {
+	if x == 0 || x == 1 {
+		return x
+	}
+	return fibonacci(x - 1) + fibonacci(x - 2)
 }
