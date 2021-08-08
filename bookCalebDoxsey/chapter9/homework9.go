@@ -17,6 +17,15 @@ type Shape interface {
 	area() float32
 }
 
+type Person struct {
+	name string
+}
+
+type Android struct {
+	Person
+	model string
+}
+
 func main() {
 	c := Circle{0,0,5}
 	s := Square{0,0, 3}
@@ -26,6 +35,12 @@ func main() {
 	fmt.Println(c.area())
 	fmt.Println(s.area())
 	fmt.Println(areas(c, s))
+
+	a := new(Android)
+	a.Person.name = "Android"
+	a.Person.Talk()
+
+	a.Talk()
 }
 
 func circleAreaDefault(x, y, r float32) float32 {
@@ -50,4 +65,8 @@ func areas(shapes ...Shape) float32 {
 		result += shape.area()
 	}
 	return result
+}
+
+func (p *Person) Talk() {
+	fmt.Println("Hi, I'm", p.name)
 }
