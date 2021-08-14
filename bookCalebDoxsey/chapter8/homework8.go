@@ -12,6 +12,8 @@ func main() {
 
 	xPtr := new(int)
 	onePtr(xPtr)
+	fmt.Println(*xPtr)
+	fmt.Println(xPtr)
 }
 
 func zero(x int) {
@@ -24,5 +26,4 @@ func zeroPtr(x *int) {
 
 func onePtr(x *int) {
 	*x = 1
-	fmt.Println(*x)
 }
