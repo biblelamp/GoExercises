@@ -27,7 +27,16 @@ type Android struct {
 }
 
 func main() {
-	c := Circle{0,0,5}
+	var v int
+	v = 12
+	fmt.Println(v)
+
+	//var c Circle
+	c := new(Circle)
+	c.x = 0
+	c.y = 0
+	c.r = 5
+
 	s := Square{0,0, 3}
 	fmt.Println(c)
 	fmt.Println(circleAreaDefault(0,0, 5))
@@ -37,17 +46,19 @@ func main() {
 	fmt.Println(areas(c, s))
 
 	a := new(Android)
+	//a.person.name = "Android"
+	//a.person.talk()
 	a.Person.name = "Android"
-	a.Person.Talk()
+	a.Person.talk()
 
-	a.Talk()
+	a.talk()
 }
 
 func circleAreaDefault(x, y, r float32) float32 {
 	return math.Pi * r * r
 }
 
-func circleArea(c Circle) float32 {
+func circleArea(c *Circle) float32 {
 	return math.Pi * c.r * c.r
 }
 
@@ -67,6 +78,6 @@ func areas(shapes ...Shape) float32 {
 	return result
 }
 
-func (p *Person) Talk() {
+func (p *Person) talk() {
 	fmt.Println("Hi, I'm", p.name)
 }
