@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 /*
  * Car designer. Describe Wheels, Engine and Body. Using
@@ -11,6 +14,9 @@ import "fmt"
  * эти элементы "собрать" несколько авто разных видов и отобразить
  * их конструктивный состав. Использовать структуры, методы, интерфейс.
  */
+
+type Tracks struct {
+}
 
 type Wheels struct {
 	number int
@@ -29,11 +35,21 @@ type Body struct {
 type Car struct {
 	wheels Wheels
 	engine Engine
-	carBody Body
+	body Body
 }
 
-func (c Car) show() {
-	fmt.Println(c)
+type Tractor struct {
+	tracks Tracks
+	engine Engine
+	body Body
+}
+
+func (c Car) components() {
+	fmt.Println(reflect.TypeOf(c).Name(), c)
+}
+
+func (t Tractor) components() {
+	fmt.Println(reflect.TypeOf(t).Name(), t)
 }
 
 func main() {
@@ -41,7 +57,11 @@ func main() {
 	w := Wheels{4, "summer"}
 	e := Engine{4, "petrol"}
 	b := Body{"sedan"}
-	c := Car{w, e, b}
-	c.show()
+	car := Car{w, e, b}
+	car.components()
+
+	t := Tracks{}
+	tractor := Tractor{t, e, b}
+	tractor.components()
 
 }
