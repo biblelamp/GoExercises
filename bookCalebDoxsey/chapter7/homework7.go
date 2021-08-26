@@ -11,12 +11,24 @@ func main() {
 
 	fmt.Println(add(1,2,3))
 
-	// closures
+	// function like variables
 	add := func(x, y int) int {
 		return x + y
 	}
 	fmt.Println(add(1,2))
 
+	// anonymous function
+	msg := "Anonymous function"
+	m := func() {
+		fmt.Println(msg)
+	}
+	m()
+
+	func() {
+		fmt.Println(msg)
+	}()
+
+	// closures
 	i := -1
 	increment := func() int {
 		i++
@@ -36,6 +48,8 @@ func main() {
 	panicDemo()
 
 	// homework
+	fmt.Println("Home tasks:")
+
 	numbers := []int{0, 1, 2, 3, 4}
 	fmt.Println("Sum of slice: ", sum(numbers))
 
