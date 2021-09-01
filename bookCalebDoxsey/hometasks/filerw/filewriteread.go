@@ -14,9 +14,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// write to file
+	// write string to file
 	var count int
-	count, err = file.Write([]byte("Hello\nworld!"))
+	count, err = file.WriteString("1. Hello world!\n2. Hello world!")
 
 	// error processing
 
