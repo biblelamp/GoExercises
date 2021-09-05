@@ -7,4 +7,5 @@ import (
 
 func main() {
 	fmt.Println(math.Average([]float64{1,2}))
+	fmt.Println(math.Average([]float64{}))
 }
