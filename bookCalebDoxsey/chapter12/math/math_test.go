@@ -1,17 +1,21 @@
 package math
 
-import "testing"
+import (
+	"math"
+	"testing"
+)
 
 type testSet struct {
 	values []float64
 	average float64
+	min float64
 }
 
 var testSets = []testSet {
-	{ []float64{1,2}, 1.5 },
-	{ []float64{1,1,1,1,1,1}, 1 },
-	{ []float64{-1,1}, 0 },
-	{ []float64{}, 0 },
+	{ []float64{1,2}, 1.5, 1 },
+	{ []float64{1,1,1,1,1,1}, 1, 1 },
+	{ []float64{-1,1}, 0, -1 },
+	{ []float64{}, 0, math.NaN() },
 }
 
 func TestAverageOne(t *testing.T) {
@@ -29,6 +33,22 @@ func TestAverage(t *testing.T) {
 			t.Error(
 				"For", pair.values,
 				"expected", pair.average,
+				"got", v,
+			)
+		}
+	}
+}
+
+func TestMin(t *testing.T) {
+	for _, pair := range testSets {
+		v := Min(pair.values)
+		if len(pair.values) == 0 && math.IsNaN(v) {
+			continue
+		}
+		if v != pair.min {
+			t.Error(
+				"For", pair.values,
+				"expected", pair.min,
 				"got", v,
 			)
 		}
